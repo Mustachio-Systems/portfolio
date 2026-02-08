@@ -5,6 +5,12 @@ import { Mail, Phone, MessageCircle, MapPin, Send, ArrowRight, Clock, Loader2, C
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Mustachio Systems",
+  description: "Get in touch with Mustachio Systems for executive engineering services.",
+};
 
 export default function Contact() {
   

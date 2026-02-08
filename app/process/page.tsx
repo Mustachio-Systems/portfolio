@@ -4,6 +4,12 @@ import { CheckCircle2, Search, PenTool, Code, Server, Zap, X } from 'lucide-reac
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Process | Mustachio Systems",
+  description: "Learn about the engineering process used by Mustachio Systems.",
+};
 
 export default function Process() {
   

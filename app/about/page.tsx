@@ -6,6 +6,12 @@ import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import TechTicker from "@/components/TechTicker";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | Mustachio Systems",
+  description: "Learn more about Mustachio Systems and the executive engineering approach.",
+};
 
 export default function About() {
   return (

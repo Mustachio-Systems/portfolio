@@ -1,6 +1,12 @@
 'use client';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Mustachio Systems",
+  description: "The terms and conditions governing the use of Mustachio Systems' services.",
+};
 
 export default function TermsOfService() {
   return (

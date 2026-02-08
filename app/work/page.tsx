@@ -5,6 +5,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Work | Mustachio Systems",
+  description: "View selected projects and case studies from Mustachio Systems.",
+};
 
 export default function Work() {
   const projects = [

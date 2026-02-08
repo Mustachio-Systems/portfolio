@@ -1,6 +1,12 @@
 'use client';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Mustachio Systems",
+  description: "Learn about the privacy practices of Mustachio Systems.",
+};
 
 export default function PrivacyPolicy() {
   return (
