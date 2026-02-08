@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description: "Executive engineering for the modern web. Full-stack architecture and automation.",
   icons: {
-    icon: '/favicon.ico', 
+    icon: '/icon.png', 
   }
 };
 

@@ -39,7 +39,7 @@ export default function About() {
                         <p className="text-xl text-slate-400 leading-relaxed mb-8">
                             I am the bridge between human intent and machine execution. 
                             <br /><br />
-                            {'Operating from <strong>Puerto Rico</strong>, I built Mustachio Systems to reject the bloated "agency model." Instead, I offer a direct line to senior-level engineering—pure, efficient, and precise.'}
+                            {'Operating from Puerto Rico, I built Mustachio Systems to reject the bloated "agency model." Instead, I offer a direct line to senior-level engineering pure, efficient, and precise.'}
                         </p>
                     </div>
 

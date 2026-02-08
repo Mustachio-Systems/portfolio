@@ -2,25 +2,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image"; // 👈 Added this import
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  // Logic: Handle scrolling ONLY for anchors that exist on the home page (#expertise is the only one left)
-  // NOTE: Contact is now a separate page, so it doesn't use this function anymore.
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
-    if (pathname === '/') {
-      e.preventDefault(); 
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-    setIsMobileMenuOpen(false); 
-  };
 
   return (
     <>
@@ -31,36 +19,31 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
-          {/* Brand */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20">M</div>
-            <span className="font-bold tracking-tight text-white hidden sm:block">MUSTACHIO <span className="text-slate-500">SYSTEMS</span></span>
+          {/* Brand - UPDATED WITH LOGO */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-all">
+                <Image 
+                    src="/icon.png" 
+                    alt="Mustachio Systems" 
+                    width={32} 
+                    height={32} 
+                    className="object-cover"
+                />
+            </div>
+            <span className="font-bold tracking-tight text-white hidden sm:block">
+                MUSTACHIO <span className="text-slate-500">SYSTEMS</span>
+            </span>
           </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-            
-            {/* Expertise - Page Link */}
-            <Link 
-              href="/expertise" 
-              className="hover:text-white transition-colors cursor-pointer"
-            >
+            <Link href="/expertise" className="hover:text-white transition-colors cursor-pointer">
               Expertise
             </Link>
-
-            {/* Work - Page Link */}
-            <Link 
-              href="/work" 
-              className="hover:text-white transition-colors cursor-pointer"
-            >
+            <Link href="/work" className="hover:text-white transition-colors cursor-pointer">
               Selected Work
             </Link>
-
-            {/* Contact - NOW A DIRECT PAGE LINK */}
-            <Link 
-              href="/contact" 
-              className="hover:text-white transition-colors cursor-pointer"
-            >
+            <Link href="/contact" className="hover:text-white transition-colors cursor-pointer">
               Contact
             </Link>
           </div>
@@ -68,7 +51,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:block">
              <Link 
-              href="/contact" // Updated to /contact
+              href="/contact" 
               className="px-5 py-2 text-xs font-bold bg-white text-slate-950 rounded-lg hover:bg-slate-200 transition-colors cursor-pointer"
             >
               Start a Project
@@ -113,7 +96,7 @@ export default function Navbar() {
               </Link>
 
               <Link 
-                href="/contact" // Updated
+                href="/contact" 
                 className="block py-4 text-center font-bold bg-indigo-600 text-white rounded-xl mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
